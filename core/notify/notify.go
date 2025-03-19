@@ -11,7 +11,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 
 	"github.com/wechat-pay/core/auth"
@@ -141,13 +140,13 @@ func doAEADOpen(c cipher.AEAD, nonce, ciphertext, additionalData string) (string
 }
 
 func getRequestBody(request *http.Request) ([]byte, error) {
-	body, err := ioutil.ReadAll(request.Body)
+	body, err := io.ReadAll(request.Body)
 	if err != nil {
 		return nil, fmt.Errorf("read request body err: %v", err)
 	}
 
 	_ = request.Body.Close()
-	request.Body = ioutil.NopCloser(bytes.NewBuffer(body))
+	request.Body = io.NopCloser(bytes.NewBuffer(body))
 
 	return body, nil
 }

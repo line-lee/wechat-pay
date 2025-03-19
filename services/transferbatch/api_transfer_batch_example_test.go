@@ -158,7 +158,7 @@ func ExampleTransferBatchApiService_InitiateBatchTransfer() {
 
 	if err != nil {
 		// 处理错误
-		log.Printf("call InitiateBatchTransfer err:%s", err)
+		log.Printf("call InitiateBaillTransfer err:%s", err)
 	} else {
 		// 处理返回结果
 		log.Printf("status=%d resp=%s", result.Response.StatusCode, resp)

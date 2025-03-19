@@ -7,7 +7,6 @@ import (
 	"crypto/rsa"
 	"crypto/x509"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"reflect"
 	"strconv"
@@ -151,7 +150,7 @@ func mockDownloadServer(t *testing.T) *gomonkey.Patches {
 				ProtoMajor:    1,
 				ProtoMinor:    1,
 				Header:        http.Header{},
-				Body:          ioutil.NopCloser(bytes.NewBufferString(data)),
+				Body:          io.NopCloser(bytes.NewBufferString(data)),
 				ContentLength: int64(len(data)),
 				Request:       req,
 			}
