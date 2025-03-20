@@ -4,8 +4,189 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dbe9c78-de98-4602-aa4e-f34cb95743f2" name="Changes" comment=".gitignore">
+    <list default="true" id="3dbe9c78-de98-4602-aa4e-f34cb95743f2" name="Changes" comment="完善商家转账剩余接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/wechatpay_download_certs/wechatpay_download_certs.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/wechatpay_download_certs/wechatpay_download_certs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/credentials/wechat_pay_credential.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/credentials/wechat_pay_credential.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/credentials/wechat_pay_credential_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/credentials/wechat_pay_credential_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/signers/sha256withrsa_signer.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/signers/sha256withrsa_signer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/signers/sha256withrsa_signer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/signers/sha256withrsa_signer_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/validators/validator_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/validators/validator_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/validators/wechat_pay_notify_validator.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/validators/wechat_pay_notify_validator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/validators/wechat_pay_response_validator.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/validators/wechat_pay_response_validator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/validators/wechat_pay_validator.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/validators/wechat_pay_validator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_combined_verifier.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_combined_verifier.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_pubkey_verifier_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_pubkey_verifier_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_verifier.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_verifier.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_verifier_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/auth/verifiers/sha256withrsa_verifier_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/certificate_map.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/certificate_map.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/ciphers/wechat_pay_cipher.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/ciphers/wechat_pay_cipher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/ciphers/wechat_pay_cipher_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/ciphers/wechat_pay_cipher_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/decryptors/wechat_pay_decryptor.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/decryptors/wechat_pay_decryptor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/decryptors/wechat_pay_decryptor_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/decryptors/wechat_pay_decryptor_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/encryptors/wechat_pay_encryptor.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/encryptors/wechat_pay_encryptor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/encryptors/wechat_pay_encryptor_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/encryptors/wechat_pay_encryptor_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/cipher/encryptors/wechat_pay_pubkey_encryptor.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/cipher/encryptors/wechat_pay_pubkey_encryptor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/client_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/client_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/client_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/client_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/downloader/downloader.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/downloader/downloader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/downloader/downloader_mgr.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/downloader/downloader_mgr.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/downloader/downloader_mgr_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/downloader/downloader_mgr_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/downloader/downloader_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/downloader/downloader_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/downloader/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/downloader/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/downloader/mock_download_server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/downloader/mock_download_server_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/notify/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/notify/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/notify/notify.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/notify/notify.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/notify/notify_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/notify/notify_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/option/auth_cipher_option.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/option/auth_cipher_option.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/option/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/option/option.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cashcoupons/CallBackUrlApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cashcoupons/CallBackUrlApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cashcoupons/CouponApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cashcoupons/CouponApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cashcoupons/StockApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cashcoupons/StockApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/certificates/CertificatesApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/certificates/CertificatesApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/giftactivity/ActivityApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/giftactivity/ActivityApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/goldplan/MerchantsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/goldplan/MerchantsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/goldplan/StatusApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/goldplan/StatusApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/lovefeast/BrandsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lovefeast/BrandsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/lovefeast/OrdersApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lovefeast/OrdersApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/merchantexclusivecoupon/BusiFavorApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/merchantexclusivecoupon/BusiFavorApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/merchantexclusivecoupon/CallBackApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/merchantexclusivecoupon/CallBackApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/merchantexclusivecoupon/CouponApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/merchantexclusivecoupon/CouponApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/merchantexclusivecoupon/SubsidyApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/merchantexclusivecoupon/SubsidyApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/partnerpayments/app/AppApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/partnerpayments/app/AppApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/partnerpayments/h5/H5Api.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/partnerpayments/h5/H5Api.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/partnerpayments/jsapi/JsapiApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/partnerpayments/jsapi/JsapiApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/partnerpayments/native/NativeApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/partnerpayments/native/NativeApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/partnertransferbatch/TransferBatchApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/partnertransferbatch/TransferBatchApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/partnertransferbatch/TransferDetailApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/partnertransferbatch/TransferDetailApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payments/app/AppApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payments/app/AppApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payments/h5/H5Api.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payments/h5/H5Api.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payments/jsapi/JsapiApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payments/jsapi/JsapiApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payments/native/NativeApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payments/native/NativeApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payrollcard/AuthenticationsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payrollcard/AuthenticationsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payrollcard/RelationsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payrollcard/RelationsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payrollcard/TokensApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payrollcard/TokensApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/payrollcard/TransferBatchApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/payrollcard/TransferBatchApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/profitsharing/BillShipmentApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/profitsharing/BillShipmentApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/profitsharing/MerchantsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/profitsharing/MerchantsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/profitsharing/OrdersApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/profitsharing/OrdersApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/profitsharing/ReceiversApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/profitsharing/ReceiversApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/profitsharing/ReturnOrdersApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/profitsharing/ReturnOrdersApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/profitsharing/TransactionsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/profitsharing/TransactionsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/refunddomestic/RefundsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/refunddomestic/RefundsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/retailstore/ActivityApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/retailstore/ActivityApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/retailstore/QualificationApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/retailstore/QualificationApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/retailstore/RetailStoreActApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/retailstore/RetailStoreActApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/transferbatch/TransferBatchApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/transferbatch/TransferBatchApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/transferbatch/TransferDetailApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/transferbatch/TransferDetailApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/weixinpayscanandride/TransactionsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/weixinpayscanandride/TransactionsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/weixinpayscanandride/UserServicesApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/weixinpayscanandride/UserServicesApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/wexinpayscoreparking/ParkingsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wexinpayscoreparking/ParkingsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/wexinpayscoreparking/ServicesApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wexinpayscoreparking/ServicesApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/wexinpayscoreparking/TransactionsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/wexinpayscoreparking/TransactionsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cashcoupons/api_call_back_url.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/cashcoupons/api_call_back_url.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cashcoupons/api_call_back_url_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/cashcoupons/api_call_back_url_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cashcoupons/api_coupon.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/cashcoupons/api_coupon.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cashcoupons/api_coupon_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/cashcoupons/api_coupon_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cashcoupons/api_stock.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/cashcoupons/api_stock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cashcoupons/api_stock_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/cashcoupons/api_stock_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/certificates/api_certificates.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/certificates/api_certificates.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/certificates/api_certificates_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/certificates/api_certificates_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/certificates/api_certificates_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/certificates/api_certificates_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fileuploader/file_uploader.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/fileuploader/file_uploader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fileuploader/fileuploader_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/fileuploader/fileuploader_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fileuploader/image_uploader.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/fileuploader/image_uploader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fileuploader/marketing_image_uploader.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/fileuploader/marketing_image_uploader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fileuploader/mch_biz_uploader.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/fileuploader/mch_biz_uploader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fileuploader/video_uploader.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/fileuploader/video_uploader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/giftactivity/api_activity.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/giftactivity/api_activity.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/giftactivity/api_activity_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/giftactivity/api_activity_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/goldplan/api_merchants.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/goldplan/api_merchants.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/goldplan/api_merchants_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/goldplan/api_merchants_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/goldplan/api_status.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/goldplan/api_status.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/goldplan/api_status_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/goldplan/api_status_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lovefeast/api_brands.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/lovefeast/api_brands.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lovefeast/api_brands_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/lovefeast/api_brands_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lovefeast/api_orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/lovefeast/api_orders.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lovefeast/api_orders_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/lovefeast/api_orders_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_busi_favor.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_busi_favor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_busi_favor_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_busi_favor_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_call_back.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_call_back.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_call_back_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_call_back_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_coupon.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_coupon.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_coupon_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_coupon_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_subsidy.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_subsidy.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_subsidy_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/merchantexclusivecoupon/api_subsidy_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/app/api_app.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/app/api_app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/app/api_app_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/app/api_app_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/h5/api_h5.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/h5/api_h5.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/h5/api_h5_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/h5/api_h5_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/jsapi/api_jsapi.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/jsapi/api_jsapi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/jsapi/api_jsapi_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/jsapi/api_jsapi_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/jsapi/api_jsapi_request_payment.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/jsapi/api_jsapi_request_payment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/native/api_native.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/native/api_native.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnerpayments/native/api_native_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnerpayments/native/api_native_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_batch.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_batch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_batch_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_batch_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_detail.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_detail.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_detail_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/partnertransferbatch/api_transfer_detail_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/app/api_app.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/app/api_app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/app/api_app_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/app/api_app_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/app/api_app_request_payment.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/app/api_app_request_payment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/h5/api_h5.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/h5/api_h5.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/h5/api_h5_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/h5/api_h5_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/jsapi/api_jsapi.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/jsapi/api_jsapi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/jsapi/api_jsapi_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/jsapi/api_jsapi_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/jsapi/api_jsapi_request_payment.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/jsapi/api_jsapi_request_payment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/native/api_native.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/native/api_native.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payments/native/api_native_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payments/native/api_native_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_authentications.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_authentications.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_authentications_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_authentications_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_relations.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_relations.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_relations_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_relations_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_tokens.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_tokens.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_tokens_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_tokens_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_transfer_batch.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_transfer_batch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payrollcard/api_transfer_batch_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/payrollcard/api_transfer_batch_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_bill_shipment.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_bill_shipment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_bill_shipment_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_bill_shipment_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_merchants.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_merchants.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_merchants_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_merchants_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_orders.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_orders_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_orders_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_receivers.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_receivers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_receivers_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_receivers_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_return_orders.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_return_orders.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_return_orders_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_return_orders_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_transactions.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_transactions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/profitsharing/api_transactions_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/profitsharing/api_transactions_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/refunddomestic/api_refunds.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/refunddomestic/api_refunds.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/refunddomestic/api_refunds_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/refunddomestic/api_refunds_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/retailstore/api_activity.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/retailstore/api_activity.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/retailstore/api_activity_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/retailstore/api_activity_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/retailstore/api_qualification.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/retailstore/api_qualification.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/retailstore/api_qualification_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/retailstore/api_qualification_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/retailstore/api_retail_store_act.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/retailstore/api_retail_store_act.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/retailstore/api_retail_store_act_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/retailstore/api_retail_store_act_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/transferbatch/api_transfer_batch.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/transferbatch/api_transfer_batch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/transferbatch/api_transfer_batch_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/transferbatch/api_transfer_batch_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/transferbatch/api_transfer_detail.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/transferbatch/api_transfer_detail.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/transferbatch/api_transfer_detail_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/transferbatch/api_transfer_detail_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/transferbill/api_transfer_bill.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/transferbill/api_transfer_bill.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/weixinpayscanandride/api_transactions.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/weixinpayscanandride/api_transactions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/weixinpayscanandride/api_transactions_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/weixinpayscanandride/api_transactions_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/weixinpayscanandride/api_user_services.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/weixinpayscanandride/api_user_services.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/weixinpayscanandride/api_user_services_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/weixinpayscanandride/api_user_services_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wexinpayscoreparking/api_parkings.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/wexinpayscoreparking/api_parkings.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wexinpayscoreparking/api_parkings_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/wexinpayscoreparking/api_parkings_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wexinpayscoreparking/api_services.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/wexinpayscoreparking/api_services.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wexinpayscoreparking/api_services_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/wexinpayscoreparking/api_services_example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wexinpayscoreparking/api_transactions.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/wexinpayscoreparking/api_transactions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wexinpayscoreparking/api_transactions_example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/wexinpayscoreparking/api_transactions_example_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +197,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2uWUeyruAdJ44tajY9LarBUsi3P" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,6 +208,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Go Build.go build github.com/line-lee/wechat-pay.executor": "Run",
+    "Go Build.go build github.com/wechat-pay.executor": "Run",
+    "Go Test.TestRequest in github.com/wechat-pay/core.executor": "Run",
+    "Go Test.go test github.com/wechat-pay/services/transferbatch.executor": "Run",
+    "Go Test.go test github.com/wechat-pay/services/weixinpayscanandride.executor": "Run",
+    "Go Test.gocheck wechat-pay.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
@@ -34,7 +221,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "E:/github/wechat-pay",
+    "last_opened_file_path": "E:/web_work_space/trip-portal",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
@@ -42,8 +229,67 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\github\wechat-pay\services" />
       <recent name="E:\github\wechat-pay" />
     </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/line-lee/wechat-pay">
+    <configuration name="go build github.com/line-lee/wechat-pay" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="wechat-pay" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/line-lee/wechat-pay" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/wechat-pay" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="wechat-pay" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/wechat-pay" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test github.com/wechat-pay/services/transferbatch" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wechat-pay" />
+      <working_directory value="$PROJECT_DIR$/services/transferbatch" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/wechat-pay/services/transferbatch" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test github.com/wechat-pay/services/weixinpayscanandride" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wechat-pay" />
+      <working_directory value="$PROJECT_DIR$/services/weixinpayscanandride" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/wechat-pay/services/weixinpayscanandride" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="gocheck wechat-pay" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="wechat-pay" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gocheck" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/line-lee/wechat-pay" />
+        <item itemvalue="Go Build.go build github.com/wechat-pay" />
+        <item itemvalue="Go Test.gocheck wechat-pay" />
+        <item itemvalue="Go Test.go test github.com/wechat-pay/services/weixinpayscanandride" />
+        <item itemvalue="Go Test.go test github.com/wechat-pay/services/transferbatch" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -57,9 +303,51 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="0424a47f-9f7f-4929-bcb5-8cbf5eb767f8" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="0424a47f-9f7f-4929-bcb5-8cbf5eb767f8">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=".gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore" />
+    <MESSAGE value="完善商家转账剩余接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善商家转账剩余接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

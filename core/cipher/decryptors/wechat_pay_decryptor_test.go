@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/line-lee/wechat-pay/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wechat-pay/utils"
 )
 
 const (

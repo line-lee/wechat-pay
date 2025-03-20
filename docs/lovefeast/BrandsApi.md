@@ -25,9 +25,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/services/lovefeast"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/services/lovefeast"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 func main() {

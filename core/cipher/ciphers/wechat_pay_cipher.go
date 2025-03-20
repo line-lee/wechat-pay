@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/wechat-pay/core/cipher"
+	"github.com/line-lee/wechat-pay/core/cipher"
 )
 
 type cipherType string

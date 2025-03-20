@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/utils"
 )
 
 var testCertStrList = [2]string{

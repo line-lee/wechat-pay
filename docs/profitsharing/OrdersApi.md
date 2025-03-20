@@ -27,10 +27,10 @@ import (
 	"context"
 	"log"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/services/profitsharing"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/services/profitsharing"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 func main() {
@@ -121,10 +121,10 @@ import (
 	"context"
 	"log"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/services/profitsharing"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/services/profitsharing"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 func main() {
@@ -205,10 +205,10 @@ import (
 	"context"
 	"log"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/services/profitsharing"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/services/profitsharing"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 func main() {

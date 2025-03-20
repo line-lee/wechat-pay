@@ -23,14 +23,14 @@ import (
 	"testing"
 	"time"
 
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/auth/signers"
+	"github.com/line-lee/wechat-pay/core/auth/verifiers"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/auth"
-	"github.com/wechat-pay/core/auth/signers"
-	"github.com/wechat-pay/core/auth/verifiers"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/utils"
 )
 
 const (

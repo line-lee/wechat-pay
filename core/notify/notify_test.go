@@ -14,13 +14,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/wechat-pay/core/auth/validators"
+	"github.com/line-lee/wechat-pay/core/auth/validators"
 
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/auth/verifiers"
+	"github.com/line-lee/wechat-pay/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/auth/verifiers"
-	"github.com/wechat-pay/utils"
 
 	"github.com/agiledragon/gomonkey"
 )

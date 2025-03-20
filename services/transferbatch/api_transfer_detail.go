@@ -17,9 +17,9 @@ import (
 	neturl "net/url"
 	"strings"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/services"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/services"
 )
 
 type TransferDetailApiService services.Service

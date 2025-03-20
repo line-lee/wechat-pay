@@ -7,14 +7,14 @@ import (
 	"crypto/rsa"
 	"crypto/x509"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/auth/signers"
-	"github.com/wechat-pay/core/auth/validators"
-	"github.com/wechat-pay/core/auth/verifiers"
-	"github.com/wechat-pay/core/cipher/ciphers"
-	"github.com/wechat-pay/core/cipher/decryptors"
-	"github.com/wechat-pay/core/cipher/encryptors"
-	"github.com/wechat-pay/core/downloader"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/auth/signers"
+	"github.com/line-lee/wechat-pay/core/auth/validators"
+	"github.com/line-lee/wechat-pay/core/auth/verifiers"
+	"github.com/line-lee/wechat-pay/core/cipher/ciphers"
+	"github.com/line-lee/wechat-pay/core/cipher/decryptors"
+	"github.com/line-lee/wechat-pay/core/cipher/encryptors"
+	"github.com/line-lee/wechat-pay/core/downloader"
 )
 
 type withAuthCipherOption struct{ settings core.DialSettings }

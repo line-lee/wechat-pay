@@ -10,9 +10,9 @@ import (
 	"io"
 	"mime/multipart"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/services"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/services"
 )
 
 // baseFileUploader 基础文件上传

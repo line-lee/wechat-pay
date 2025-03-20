@@ -17,9 +17,9 @@ import (
 	neturl "net/url"
 	"strings"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/services"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/services"
 )
 
 type MerchantsApiService services.Service
@@ -27,7 +27,6 @@ type MerchantsApiService services.Service
 // QueryMerchantRatio 查询最大分账比例API
 //
 // 可调用此接口查询特约商户设置的允许服务商分账的最大比例
-//
 //
 // 错误码列表
 // |名称|状态码|描述示例|原因|解决方案

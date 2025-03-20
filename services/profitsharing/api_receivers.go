@@ -16,9 +16,9 @@ import (
 	nethttp "net/http"
 	neturl "net/url"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/services"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/services"
 )
 
 type ReceiversApiService services.Service
@@ -26,7 +26,6 @@ type ReceiversApiService services.Service
 // AddReceiver 添加分账接收方API
 //
 // 商户发起添加分账接收方请求，建立分账接收方列表。后续可通过发起分账请求，将分账方商户结算后的资金，分到该分账接收方
-//
 //
 // 错误码列表
 // 名称|状态码|描述示例|原因|解决方案
@@ -92,7 +91,6 @@ func (a *ReceiversApiService) AddReceiver(ctx context.Context, req AddReceiverRe
 // DeleteReceiver 删除分账接收方API
 //
 // 商户发起删除分账接收方请求。删除后，不支持将分账方商户结算后的资金，分到该分账接收方
-//
 //
 // 错误码列表
 // 名称|状态码|描述示例|原因|解决方案

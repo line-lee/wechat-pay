@@ -15,10 +15,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/services/payments/jsapi"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/services/payments/jsapi"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 func ExampleJsapiApiService_CloseOrder() {

@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/wechat-pay/core/auth"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 // SHA256WithRSASigner Sha256WithRSA 数字签名生成器

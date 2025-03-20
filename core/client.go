@@ -25,10 +25,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wechat-pay/core/auth"
-	"github.com/wechat-pay/core/auth/credentials"
-	"github.com/wechat-pay/core/cipher"
-	"github.com/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/auth/credentials"
+	"github.com/line-lee/wechat-pay/core/cipher"
+	"github.com/line-lee/wechat-pay/core/consts"
 )
 
 var (

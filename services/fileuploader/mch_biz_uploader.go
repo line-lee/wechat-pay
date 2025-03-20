@@ -6,8 +6,8 @@ import (
 	"context"
 	"io"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/services"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/services"
 )
 
 // MchBizUploadResponse 商户上传反馈图片API返回结果

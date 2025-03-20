@@ -7,7 +7,7 @@ import (
 	"crypto/rsa"
 	"fmt"
 
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 // WechatPayPubKeyEncryptor 微信支付字符串加密器，使用微信支付公钥

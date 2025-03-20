@@ -6,8 +6,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 // WechatPayEncryptor 微信支付字符串加密器，使用微信支付平台证书

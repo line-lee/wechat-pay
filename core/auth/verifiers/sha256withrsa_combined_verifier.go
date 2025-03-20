@@ -3,7 +3,7 @@ package verifiers
 import (
 	"context"
 	"crypto/rsa"
-	"github.com/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core"
 )
 
 // SHA256WithRSACombinedVerifier 数字签名验证器，组合了公钥和平台证书

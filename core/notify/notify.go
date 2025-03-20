@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/wechat-pay/core/auth"
-	"github.com/wechat-pay/core/auth/validators"
+	"github.com/line-lee/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/auth/validators"
 )
 
 const rsaSignatureType = "WECHATPAY2-SHA256-RSA2048"

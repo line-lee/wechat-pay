@@ -9,12 +9,12 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/auth/signers"
-	"github.com/wechat-pay/core/auth/validators"
-	"github.com/wechat-pay/core/auth/verifiers"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/auth/signers"
+	"github.com/line-lee/wechat-pay/core/auth/validators"
+	"github.com/line-lee/wechat-pay/core/auth/verifiers"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 // isSameCertificateMap Check if two CertificateMaps stores same certificates.

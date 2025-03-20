@@ -7,10 +7,10 @@ import (
 	"crypto/rsa"
 	"fmt"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/auth/verifiers"
-	"github.com/wechat-pay/core/downloader"
-	"github.com/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/auth/verifiers"
+	"github.com/line-lee/wechat-pay/core/downloader"
+	"github.com/line-lee/wechat-pay/core/option"
 )
 
 func ExampleNewCertificateDownloader_saveCert() {

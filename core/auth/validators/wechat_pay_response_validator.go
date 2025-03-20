@@ -10,7 +10,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/auth"
 )
 
 // WechatPayResponseValidator 微信支付 API v3 默认应答报文验证器

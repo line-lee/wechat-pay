@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/wechat-pay/core/auth"
-	"github.com/wechat-pay/core/cipher"
+	"github.com/line-lee/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/cipher"
 )
 
 // DialSettings 微信支付 API v3 Go SDK core.Client 需要的配置信息

@@ -1,4 +1,4 @@
-module github.com/wechat-pay
+module github.com/line-lee/wechat-pay
 
 go 1.16
 

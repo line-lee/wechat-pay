@@ -6,12 +6,12 @@ import (
 	"context"
 	"testing"
 
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/downloader"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/downloader"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/utils"
 )
 
 func TestNewCertificateDownloaderWithClient(t *testing.T) {

@@ -7,11 +7,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/core/option"
-	"github.com/wechat-pay/services/fileuploader"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/core/option"
+	"github.com/line-lee/wechat-pay/services/fileuploader"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 func ExampleImageUploader_Upload() {

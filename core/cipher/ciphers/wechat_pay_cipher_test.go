@@ -8,11 +8,11 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/cipher/decryptors"
+	"github.com/line-lee/wechat-pay/core/cipher/encryptors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/cipher/decryptors"
-	"github.com/wechat-pay/core/cipher/encryptors"
 )
 
 type Student struct {

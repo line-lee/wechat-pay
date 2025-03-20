@@ -9,7 +9,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/auth"
 )
 
 // WechatPayNotifyValidator 微信支付 API v3 通知请求报文验证器

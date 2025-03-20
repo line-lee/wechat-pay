@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/wechat-pay/core/auth"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core/auth"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 // WechatPayCredentials 微信支付请求报文头 Authorization 信息生成器

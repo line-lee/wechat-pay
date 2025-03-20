@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/wechat-pay/core/notify"
-	"github.com/wechat-pay/services/payments"
+	"github.com/line-lee/wechat-pay/core/notify"
+	"github.com/line-lee/wechat-pay/services/payments"
 )
 
 func ExampleHandler_ParseNotifyRequest_transaction() {

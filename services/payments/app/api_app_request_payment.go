@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/utils"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/utils"
 )
 
 // PrepayWithRequestPaymentResponse 预下单ID，并包含了调起支付的请求参数

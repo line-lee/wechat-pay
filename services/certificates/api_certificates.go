@@ -15,9 +15,9 @@ import (
 	nethttp "net/http"
 	neturl "net/url"
 
-	"github.com/wechat-pay/core"
-	"github.com/wechat-pay/core/consts"
-	"github.com/wechat-pay/services"
+	"github.com/line-lee/wechat-pay/core"
+	"github.com/line-lee/wechat-pay/core/consts"
+	"github.com/line-lee/wechat-pay/services"
 )
 
 type CertificatesApiService services.Service
