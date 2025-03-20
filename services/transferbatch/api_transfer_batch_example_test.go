@@ -152,13 +152,13 @@ func ExampleTransferBatchApiService_InitiateBatchTransfer() {
 				UserName:       core.String("757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45"),
 			}},
 			TransferSceneId: core.String("1000"),
-			NotifyUrl: core.String("https://www.weixin.qq.com/wxpay/pay.php"),
+			NotifyUrl:       core.String("https://www.weixin.qq.com/wxpay/pay.php"),
 		},
 	)
 
 	if err != nil {
 		// 处理错误
-		log.Printf("call InitiateBaillTransfer err:%s", err)
+		log.Printf("call CreateTransferBaill err:%s", err)
 	} else {
 		// 处理返回结果
 		log.Printf("status=%d resp=%s", result.Response.StatusCode, resp)

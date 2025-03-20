@@ -16,7 +16,7 @@ import (
 	"time"
 )
 
-type InitiateBillTransferRequest struct {
+type CreateTransferBillRequest struct {
 	// 申请商户号的appid或商户号绑定的appid（企业号corpid即为此appid）
 	Appid *string `json:"appid"`
 	// 商户系统内部的商家批次单号，要求此参数只能由数字、大小写字母组成，在商户系统内部唯一
@@ -34,48 +34,48 @@ type InitiateBillTransferRequest struct {
 	// 转账备注，用户收款时可见该备注信息，UTF8编码，最多允许32个字符
 	TransferRemark *string `json:"transfer_remark"`
 	// 通知地址】 异步接收微信支付结果通知的回调地址，通知url必须为公网可访问的URL，必须为HTTPS，不能携带参数。
-	NotifyUrl * string `json:"notify_url,omitempty"`
+	NotifyUrl *string `json:"notify_url,omitempty"`
 	//【用户收款感知】 用户收款时感知到的收款原因将根据转账场景自动展示默认内容。如有其他展示需求，可在本字段传入。各场景展示的默认内容和支持传入的内容，可查看产品文档了解。
 	UserRecvPerception *string `json:"user_recv_perception,omitempty"`
 	// 【转账场景报备信息】 各转账场景下需报备的内容，商户需要按照所属转账场景规则传参，详见转账场景报备信息字段说明。
 	TransferSceneReportInfos []TransferSceneReportInfo `json:"transfer_scene_report_infos"`
 }
 
-func (o InitiateBillTransferRequest) MarshalJSON() ([]byte, error) {
+func (o CreateTransferBillRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 
 	if o.Appid == nil {
-		return nil, fmt.Errorf("field `Appid` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `Appid` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["appid"] = o.Appid
 
 	if o.OutBillNo == nil {
-		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["out_bill_no"] = o.OutBillNo
 
 	if o.TransferSceneId == nil {
-		return nil, fmt.Errorf("field `TransferSceneId` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `TransferSceneId` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["transfer_scene_id"] = o.TransferSceneId
 
 	if o.Openid == nil {
-		return nil, fmt.Errorf("field `Openid` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `Openid` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["openid"] = o.Openid
 
 	if o.TransferAmount == nil {
-		return nil, fmt.Errorf("field `TransferAmount` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `TransferAmount` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["transfer_amount"] = o.TransferAmount
 
 	if o.TransferRemark == nil {
-		return nil, fmt.Errorf("field `TransferRemark` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `TransferRemark` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["transfer_remark"] = o.TransferRemark
 
 	if o.TransferSceneReportInfos == nil {
-		return nil, fmt.Errorf("field `TransferSceneReportInfos` is required and must be specified in InitiateBillTransferRequest")
+		return nil, fmt.Errorf("field `TransferSceneReportInfos` is required and must be specified in CreateTransferBillRequest")
 	}
 	toSerialize["transfer_scene_report_infos"] = o.TransferSceneReportInfos
 
@@ -94,7 +94,7 @@ func (o InitiateBillTransferRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o InitiateBillTransferRequest) String() string {
+func (o CreateTransferBillRequest) String() string {
 	var ret string
 	if o.Appid == nil {
 		ret += "Appid:<nil>, "
@@ -152,11 +152,11 @@ func (o InitiateBillTransferRequest) String() string {
 
 	ret += fmt.Sprintf("TransferSceneReportInfos:%v, ", o.TransferSceneReportInfos)
 
-	return fmt.Sprintf("InitiateBillTransferRequest{%s}", ret)
+	return fmt.Sprintf("CreateTransferBillRequest{%s}", ret)
 }
 
-func (o InitiateBillTransferRequest) Clone() *InitiateBillTransferRequest {
-	ret := InitiateBillTransferRequest{}
+func (o CreateTransferBillRequest) Clone() *CreateTransferBillRequest {
+	ret := CreateTransferBillRequest{}
 
 	if o.Appid != nil {
 		ret.Appid = new(string)
@@ -250,7 +250,7 @@ func (o TransferSceneReportInfo) String() string {
 		ret += fmt.Sprintf("InfoContent:%v, ", *o.InfoContent)
 	}
 
-	return fmt.Sprintf("InitiateBillTransferRequest{%s}", ret)
+	return fmt.Sprintf("CreateTransferBillRequest{%s}", ret)
 }
 
 func (o TransferSceneReportInfo) Clone() *TransferSceneReportInfo {
@@ -269,7 +269,7 @@ func (o TransferSceneReportInfo) Clone() *TransferSceneReportInfo {
 	return &ret
 }
 
-type InitiateBillTransferResponse struct {
+type CreateTransferBillResponse struct {
 	//【商户单号】 商户系统内部的商家单号，要求此参数只能由数字、大小写字母组成，在商户系统内部唯一
 	OutBillNo *string `json:"out_bill_no"`
 	//【微信转账单号】 微信转账单号，微信商家转账系统返回的唯一标识
@@ -294,26 +294,26 @@ type InitiateBillTransferResponse struct {
 	PackageInfo *string `json:"package_info"`
 }
 
-func (o InitiateBillTransferResponse) MarshalJSON() ([]byte, error) {
+func (o CreateTransferBillResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 
 	if o.OutBillNo == nil {
-		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in InitiateBillTransferResponse")
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in CreateTransferBillResponse")
 	}
 	toSerialize["out_bill_no"] = o.OutBillNo
 
 	if o.TransferBillNo == nil {
-		return nil, fmt.Errorf("field `TransferBillNo` is required and must be specified in InitiateBillTransferResponse")
+		return nil, fmt.Errorf("field `TransferBillNo` is required and must be specified in CreateTransferBillResponse")
 	}
 	toSerialize["transfer_bill_no"] = o.TransferBillNo
 
 	if o.CreateTime == nil {
-		return nil, fmt.Errorf("field `CreateTime` is required and must be specified in InitiateBillTransferResponse")
+		return nil, fmt.Errorf("field `CreateTime` is required and must be specified in CreateTransferBillResponse")
 	}
 	toSerialize["create_time"] = o.CreateTime
 
 	if o.State == nil {
-		return nil, fmt.Errorf("field `State` is required and must be specified in InitiateBillTransferResponse")
+		return nil, fmt.Errorf("field `State` is required and must be specified in CreateTransferBillResponse")
 	}
 	toSerialize["state"] = o.State
 
@@ -326,7 +326,7 @@ func (o InitiateBillTransferResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o InitiateBillTransferResponse) String() string {
+func (o CreateTransferBillResponse) String() string {
 	var ret string
 	if o.OutBillNo == nil {
 		ret += "OutBillNo:<nil>, "
@@ -364,11 +364,11 @@ func (o InitiateBillTransferResponse) String() string {
 		ret += fmt.Sprintf("PackageInfo:%v, ", *o.PackageInfo)
 	}
 
-	return fmt.Sprintf("InitiateBillTransferRequest{%s}", ret)
+	return fmt.Sprintf("CreateTransferBillRequest{%s}", ret)
 }
 
-func (o InitiateBillTransferResponse) Clone() *InitiateBillTransferResponse {
-	ret := InitiateBillTransferResponse{}
+func (o CreateTransferBillResponse) Clone() *CreateTransferBillResponse {
+	ret := CreateTransferBillResponse{}
 
 	if o.OutBillNo != nil {
 		ret.OutBillNo = new(string)
@@ -398,6 +398,695 @@ func (o InitiateBillTransferResponse) Clone() *InitiateBillTransferResponse {
 	if o.PackageInfo != nil {
 		ret.PackageInfo = new(string)
 		*ret.PackageInfo = *o.PackageInfo
+	}
+
+	return &ret
+}
+
+type CancelTransferBillRequest struct {
+	//【商户单号】 商户系统内部的商家单号，要求此参数只能由数字、大小写字母组成，在商户系统内部唯一
+	OutBillNo *string `json:"out_bill_no"`
+}
+
+func (o CancelTransferBillRequest) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+
+	if o.OutBillNo == nil {
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in CancelTransferBillRequest")
+	}
+	toSerialize["out_bill_no"] = o.OutBillNo
+
+	return json.Marshal(toSerialize)
+}
+
+func (o CancelTransferBillRequest) String() string {
+	var ret string
+	if o.OutBillNo == nil {
+		ret += "OutBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("OutBillNo:%v, ", *o.OutBillNo)
+	}
+
+	return fmt.Sprintf("CancelTransferBillRequest{%s}", ret)
+}
+
+func (o CancelTransferBillRequest) Clone() *CancelTransferBillRequest {
+	ret := CancelTransferBillRequest{}
+
+	if o.OutBillNo != nil {
+		ret.OutBillNo = new(string)
+		*ret.OutBillNo = *o.OutBillNo
+	}
+
+	return &ret
+}
+
+type CancelTransferBillResponse struct {
+	//【商户单号】 商户系统内部的商家单号，要求此参数只能由数字、大小写字母组成，在商户系统内部唯一
+	OutBillNo *string `json:"out_bill_no"`
+	//【微信转账单号】 商家转账订单的主键，唯一定义此资源的标识
+	TransferBillNo *string `json:"transfer_bill_no"`
+	//【单据状态】 CANCELING: 撤销中；CANCELLED:已撤销
+	State *string `json:"state"`
+	//【最后一次单据状态变更时间】 按照使用rfc3339所定义的格式，格式为yyyy-MM-DDThh:mm:ss+TIMEZONE
+	UpdateTime *string `json:"update_time"`
+}
+
+func (o CancelTransferBillResponse) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+
+	if o.OutBillNo == nil {
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in CancelTransferBillResponse")
+	}
+	toSerialize["out_bill_no"] = o.OutBillNo
+
+	if o.TransferBillNo == nil {
+		return nil, fmt.Errorf("field `TransferBillNo` is required and must be specified in CancelTransferBillResponse")
+	}
+	toSerialize["transfer_bill_no"] = o.TransferBillNo
+
+	if o.State == nil {
+		return nil, fmt.Errorf("field `State` is required and must be specified in CancelTransferBillResponse")
+	}
+	toSerialize["state"] = o.State
+
+	if o.UpdateTime == nil {
+		return nil, fmt.Errorf("field `UpdateTime` is required and must be specified in CancelTransferBillResponse")
+	}
+	toSerialize["update_time"] = o.UpdateTime
+
+	return json.Marshal(toSerialize)
+}
+
+func (o CancelTransferBillResponse) String() string {
+	var ret string
+	if o.OutBillNo == nil {
+		ret += "OutBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("OutBillNo:%v, ", *o.OutBillNo)
+	}
+
+	if o.TransferBillNo == nil {
+		ret += "TransferBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferBillNo:%v, ", *o.TransferBillNo)
+	}
+
+	if o.State == nil {
+		ret += "State:<nil>, "
+	} else {
+		ret += fmt.Sprintf("State:%v, ", *o.State)
+	}
+
+	if o.UpdateTime == nil {
+		ret += "UpdateTime:<nil>, "
+	} else {
+		ret += fmt.Sprintf("UpdateTime:%v, ", *o.UpdateTime)
+	}
+
+	return fmt.Sprintf("CancelTransferBillResponse{%s}", ret)
+}
+
+func (o CancelTransferBillResponse) Clone() *CancelTransferBillResponse {
+	ret := CancelTransferBillResponse{}
+
+	if o.OutBillNo != nil {
+		ret.OutBillNo = new(string)
+		*ret.OutBillNo = *o.OutBillNo
+	}
+
+	if o.TransferBillNo != nil {
+		ret.TransferBillNo = new(string)
+		*ret.TransferBillNo = *o.TransferBillNo
+	}
+
+	if o.State != nil {
+		ret.State = new(string)
+		*ret.State = *o.State
+	}
+
+	if o.UpdateTime != nil {
+		ret.UpdateTime = new(string)
+		*ret.UpdateTime = *o.UpdateTime
+	}
+
+	return &ret
+}
+
+type GetlTransferBillByOutNoRequest struct {
+	OutBillNo *string `json:"out_bill_no"`
+}
+
+func (o GetlTransferBillByOutNoRequest) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+
+	if o.OutBillNo == nil {
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in GetlTransferBillByOutNoRequest")
+	}
+	toSerialize["out_bill_no"] = o.OutBillNo
+
+	return json.Marshal(toSerialize)
+}
+
+func (o GetlTransferBillByOutNoRequest) String() string {
+	var ret string
+	if o.OutBillNo == nil {
+		ret += "OutBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("OutBillNo:%v, ", *o.OutBillNo)
+	}
+
+	return fmt.Sprintf("GetlTransferBillByOutNoRequest{%s}", ret)
+}
+
+func (o GetlTransferBillByOutNoRequest) Clone() *GetlTransferBillByOutNoRequest {
+	ret := GetlTransferBillByOutNoRequest{}
+
+	if o.OutBillNo != nil {
+		ret.OutBillNo = new(string)
+		*ret.OutBillNo = *o.OutBillNo
+	}
+
+	return &ret
+}
+
+type GetlTransferBillByOutNoResponse struct {
+	//【商户号】 微信支付分配的商户号
+	MchId *string `json:"mch_id"`
+	//【商户单号】 商户系统内部的商家单号，要求此参数只能由数字、大小写字母组成，在商户系统内部唯一
+	OutBillNo *string `json:"out_bill_no"`
+	//【商家转账订单号】 商家转账订单的主键，唯一定义此资源的标识
+	TransferBillNo *string `json:"transfer_bill_no"`
+	//【商户AppID】 是微信开放平台和微信公众平台为开发者的应用程序(APP、小程序、公众号、企业号corpid即为此AppID)提供的一个唯一标识。此处，可以填写这四种类型中的任意一种APPID，但请确保该appid与商户号有绑定关系。详见：普通商户模式开发必要参数说明。
+	Appid *string `json:"appid"`
+	//【单据状态】
+	//可选取值
+	//ACCEPTED: 转账已受理
+	//PROCESSING: 转账锁定资金中。如果一直停留在该状态，建议检查账户余额是否足够，如余额不足，可充值后再原单重试。
+	//WAIT_USER_CONFIRM: 待收款用户确认，可拉起微信收款确认页面进行收款确认
+	//TRANSFERING: 转账中，可拉起微信收款确认页面再次重试确认收款
+	//SUCCESS: 转账成功
+	//FAIL: 转账失败
+	//CANCELING: 商户撤销请求受理成功，该笔转账正在撤销中
+	//CANCELLED: 转账撤销完成
+	State *string `json:"state"`
+	//【转账金额】 转账金额单位为“分”。
+	TransferAmount *int64 `json:"transfer_amount"`
+	//【转账备注】 单条转账备注（微信用户会收到该备注），UTF8编码，最多允许32个字符
+	TransferRemark *string `json:"transfer_remark"`
+	//【失败原因】 订单已失败或者已退资金时，会返回订单失败原因
+	FailReason *string `json:"fail_reason,omitempty"`
+	//【收款用户OpenID】 用户在商户appid下的唯一标识。发起转账前需获取到用户的OpenID，获取方式详见参数说明。
+	Openid *string `json:"openid,omitempty"`
+	//【收款用户姓名】 收款方真实姓名。支持标准RSA算法和国密算法，公钥由微信侧提供转账金额 >= 2,000元时，该笔明细必须填写若商户传入收款用户姓名，微信支付会校验用户OpenID与姓名是否一致，并提供电子回单
+	UserName *string `json:"user_name,omitempty"`
+	//【单据创建时间】 单据受理成功时返回，按照使用rfc3339所定义的格式，格式为yyyy-MM-DDThh:mm:ss+TIMEZONE
+	CreateTime *string `json:"create_time"`
+	//【最后一次状态变更时间】 单据最后更新时间，按照使用rfc3339所定义的格式，格式为yyyy-MM-DDThh:mm:ss+TIMEZONE
+	UpdateTime *string `json:"update_time"`
+}
+
+func (o GetlTransferBillByOutNoResponse) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+
+	if o.MchId == nil {
+		return nil, fmt.Errorf("field `MchId` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["mch_id"] = o.MchId
+
+	if o.OutBillNo == nil {
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["out_bill_no"] = o.OutBillNo
+
+	if o.TransferBillNo == nil {
+		return nil, fmt.Errorf("field `TransferBillNo` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["transfer_bill_no"] = o.TransferBillNo
+
+	if o.Appid == nil {
+		return nil, fmt.Errorf("field `Appid` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["appid"] = o.Appid
+
+	if o.State == nil {
+		return nil, fmt.Errorf("field `State` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["state"] = o.State
+
+	if o.TransferAmount == nil {
+		return nil, fmt.Errorf("field `TransferAmount` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["transfer_amount"] = o.TransferAmount
+
+	if o.TransferRemark == nil {
+		return nil, fmt.Errorf("field `TransferRemark` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["transfer_remark"] = o.TransferRemark
+
+	if o.FailReason != nil {
+		toSerialize["fail_reason"] = o.FailReason
+	}
+
+	if o.Openid != nil {
+		toSerialize["openid"] = o.Openid
+	}
+
+	if o.UserName != nil {
+		toSerialize["user_name"] = o.UserName
+	}
+
+	if o.CreateTime == nil {
+		return nil, fmt.Errorf("field `CreateTime` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["create_time"] = o.CreateTime
+
+	if o.UpdateTime == nil {
+		return nil, fmt.Errorf("field `UpdateTime` is required and must be specified in GetlTransferBillByOutNoResponse")
+	}
+	toSerialize["update_time"] = o.UpdateTime
+
+	return json.Marshal(toSerialize)
+}
+
+func (o GetlTransferBillByOutNoResponse) String() string {
+	var ret string
+	if o.MchId == nil {
+		ret += "MchId:<nil>, "
+	} else {
+		ret += fmt.Sprintf("MchId:%v, ", *o.MchId)
+	}
+
+	if o.OutBillNo == nil {
+		ret += "OutBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("OutBillNo:%v, ", *o.OutBillNo)
+	}
+
+	if o.TransferBillNo == nil {
+		ret += "TransferBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferBillNo:%v, ", *o.TransferBillNo)
+	}
+
+	if o.Appid == nil {
+		ret += "Appid:<nil>, "
+	} else {
+		ret += fmt.Sprintf("Appid:%v, ", *o.Appid)
+	}
+
+	if o.State == nil {
+		ret += "State:<nil>, "
+	} else {
+		ret += fmt.Sprintf("State:%v, ", *o.State)
+	}
+
+	if o.TransferAmount == nil {
+		ret += "TransferAmount:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferAmount:%v, ", *o.TransferAmount)
+	}
+
+	if o.TransferRemark == nil {
+		ret += "TransferRemark:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferRemark:%v, ", *o.TransferRemark)
+	}
+
+	if o.FailReason == nil {
+		ret += "FailReason:<nil>, "
+	} else {
+		ret += fmt.Sprintf("FailReason:%v, ", *o.FailReason)
+	}
+
+	if o.Openid == nil {
+		ret += "Openid:<nil>, "
+	} else {
+		ret += fmt.Sprintf("Openid:%v, ", *o.Openid)
+	}
+
+	if o.UserName == nil {
+		ret += "UserName:<nil>, "
+	} else {
+		ret += fmt.Sprintf("UserName:%v, ", *o.UserName)
+	}
+
+	if o.CreateTime == nil {
+		ret += "CreateTime:<nil>, "
+	} else {
+		ret += fmt.Sprintf("CreateTime:%v, ", *o.CreateTime)
+	}
+
+	if o.UpdateTime == nil {
+		ret += "UpdateTime:<nil>, "
+	} else {
+		ret += fmt.Sprintf("UpdateTime:%v, ", *o.UpdateTime)
+	}
+
+	return fmt.Sprintf("GetlTransferBillByOutNoResponse{%s}", ret)
+}
+
+func (o GetlTransferBillByOutNoResponse) Clone() *GetlTransferBillByOutNoResponse {
+	ret := GetlTransferBillByOutNoResponse{}
+
+	if o.MchId != nil {
+		ret.MchId = new(string)
+		*ret.MchId = *o.MchId
+	}
+
+	if o.OutBillNo != nil {
+		ret.OutBillNo = new(string)
+		*ret.OutBillNo = *o.OutBillNo
+	}
+
+	if o.TransferBillNo != nil {
+		ret.TransferBillNo = new(string)
+		*ret.TransferBillNo = *o.TransferBillNo
+	}
+
+	if o.Appid != nil {
+		ret.Appid = new(string)
+		*ret.Appid = *o.Appid
+	}
+
+	if o.State != nil {
+		ret.State = new(string)
+		*ret.State = *o.State
+	}
+
+	if o.TransferAmount != nil {
+		ret.TransferAmount = new(int64)
+		*ret.TransferAmount = *o.TransferAmount
+	}
+
+	if o.TransferRemark != nil {
+		ret.TransferRemark = new(string)
+		*ret.TransferRemark = *o.TransferRemark
+	}
+
+	if o.FailReason != nil {
+		ret.FailReason = new(string)
+		*ret.FailReason = *o.FailReason
+	}
+
+	if o.Openid != nil {
+		ret.Openid = new(string)
+		*ret.Openid = *o.Openid
+	}
+
+	if o.UserName != nil {
+		ret.UserName = new(string)
+		*ret.UserName = *o.UserName
+	}
+
+	if o.CreateTime != nil {
+		ret.CreateTime = new(string)
+		*ret.CreateTime = *o.CreateTime
+	}
+
+	if o.UpdateTime != nil {
+		ret.UpdateTime = new(string)
+		*ret.UpdateTime = *o.UpdateTime
+	}
+
+	return &ret
+}
+
+type GetlTransferBillByNoRequest struct {
+	//【微信转账单号】 微信转账单号，微信商家转账系统返回的唯一标识
+	TransferBillNo *string `json:"transfer_bill_no"`
+}
+
+func (o GetlTransferBillByNoRequest) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+
+	if o.TransferBillNo == nil {
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in GetlTransferBillByNoRequest")
+	}
+	toSerialize["transfer_bill_no"] = o.TransferBillNo
+
+	return json.Marshal(toSerialize)
+}
+
+func (o GetlTransferBillByNoRequest) String() string {
+	var ret string
+	if o.TransferBillNo == nil {
+		ret += "TransferBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferBillNo:%v, ", *o.TransferBillNo)
+	}
+
+	return fmt.Sprintf("GetlTransferBillByNoRequest{%s}", ret)
+}
+
+func (o GetlTransferBillByNoRequest) Clone() *GetlTransferBillByNoRequest {
+	ret := GetlTransferBillByNoRequest{}
+
+	if o.TransferBillNo != nil {
+		ret.TransferBillNo = new(string)
+		*ret.TransferBillNo = *o.TransferBillNo
+	}
+
+	return &ret
+}
+
+type GetlTransferBillByNoResponse struct {
+	//【商户号】 微信支付分配的商户号
+	MchId *string `json:"mch_id"`
+	//【商户单号】 商户系统内部的商家单号，要求此参数只能由数字、大小写字母组成，在商户系统内部唯一
+	OutBillNo *string `json:"out_bill_no"`
+	//【商家转账订单号】 商家转账订单的主键，唯一定义此资源的标识
+	TransferBillNo *string `json:"transfer_bill_no"`
+	//【商户AppID】 是微信开放平台和微信公众平台为开发者的应用程序(APP、小程序、公众号、企业号corpid即为此AppID)提供的一个唯一标识。此处，可以填写这四种类型中的任意一种APPID，但请确保该appid与商户号有绑定关系。详见：普通商户模式开发必要参数说明。
+	Appid *string `json:"appid"`
+	//【单据状态】
+	//可选取值
+	//ACCEPTED: 转账已受理
+	//PROCESSING: 转账锁定资金中。如果一直停留在该状态，建议检查账户余额是否足够，如余额不足，可充值后再原单重试。
+	//WAIT_USER_CONFIRM: 待收款用户确认，可拉起微信收款确认页面进行收款确认
+	//TRANSFERING: 转账中，可拉起微信收款确认页面再次重试确认收款
+	//SUCCESS: 转账成功
+	//FAIL: 转账失败
+	//CANCELING: 商户撤销请求受理成功，该笔转账正在撤销中
+	//CANCELLED: 转账撤销完成
+	State *string `json:"state"`
+	//【转账金额】 转账金额单位为“分”。
+	TransferAmount *int64 `json:"transfer_amount"`
+	//【转账备注】 单条转账备注（微信用户会收到该备注），UTF8编码，最多允许32个字符
+	TransferRemark *string `json:"transfer_remark"`
+	//【失败原因】 订单已失败或者已退资金时，会返回订单失败原因
+	FailReason *string `json:"fail_reason,omitempty"`
+	//【收款用户OpenID】 用户在商户appid下的唯一标识。发起转账前需获取到用户的OpenID，获取方式详见参数说明。
+	Openid *string `json:"openid,omitempty"`
+	//【收款用户姓名】 收款方真实姓名。支持标准RSA算法和国密算法，公钥由微信侧提供转账金额 >= 2,000元时，该笔明细必须填写若商户传入收款用户姓名，微信支付会校验用户OpenID与姓名是否一致，并提供电子回单
+	UserName *string `json:"user_name,omitempty"`
+	//【单据创建时间】 单据受理成功时返回，按照使用rfc3339所定义的格式，格式为yyyy-MM-DDThh:mm:ss+TIMEZONE
+	CreateTime *string `json:"create_time"`
+	//【最后一次状态变更时间】 单据最后更新时间，按照使用rfc3339所定义的格式，格式为yyyy-MM-DDThh:mm:ss+TIMEZONE
+	UpdateTime *string `json:"update_time"`
+}
+
+func (o GetlTransferBillByNoResponse) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+
+	if o.MchId == nil {
+		return nil, fmt.Errorf("field `MchId` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["mch_id"] = o.MchId
+
+	if o.OutBillNo == nil {
+		return nil, fmt.Errorf("field `OutBillNo` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["out_bill_no"] = o.OutBillNo
+
+	if o.TransferBillNo == nil {
+		return nil, fmt.Errorf("field `TransferBillNo` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["transfer_bill_no"] = o.TransferBillNo
+
+	if o.Appid == nil {
+		return nil, fmt.Errorf("field `Appid` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["appid"] = o.Appid
+
+	if o.State == nil {
+		return nil, fmt.Errorf("field `State` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["state"] = o.State
+
+	if o.TransferAmount == nil {
+		return nil, fmt.Errorf("field `TransferAmount` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["transfer_amount"] = o.TransferAmount
+
+	if o.TransferRemark == nil {
+		return nil, fmt.Errorf("field `TransferRemark` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["transfer_remark"] = o.TransferRemark
+
+	if o.FailReason != nil {
+		toSerialize["fail_reason"] = o.FailReason
+	}
+
+	if o.Openid != nil {
+		toSerialize["openid"] = o.Openid
+	}
+
+	if o.UserName != nil {
+		toSerialize["user_name"] = o.UserName
+	}
+
+	if o.CreateTime == nil {
+		return nil, fmt.Errorf("field `CreateTime` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["create_time"] = o.CreateTime
+
+	if o.UpdateTime == nil {
+		return nil, fmt.Errorf("field `UpdateTime` is required and must be specified in GetlTransferBillByNoResponse")
+	}
+	toSerialize["update_time"] = o.UpdateTime
+
+	return json.Marshal(toSerialize)
+}
+
+func (o GetlTransferBillByNoResponse) String() string {
+	var ret string
+	if o.MchId == nil {
+		ret += "MchId:<nil>, "
+	} else {
+		ret += fmt.Sprintf("MchId:%v, ", *o.MchId)
+	}
+
+	if o.OutBillNo == nil {
+		ret += "OutBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("OutBillNo:%v, ", *o.OutBillNo)
+	}
+
+	if o.TransferBillNo == nil {
+		ret += "TransferBillNo:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferBillNo:%v, ", *o.TransferBillNo)
+	}
+
+	if o.Appid == nil {
+		ret += "Appid:<nil>, "
+	} else {
+		ret += fmt.Sprintf("Appid:%v, ", *o.Appid)
+	}
+
+	if o.State == nil {
+		ret += "State:<nil>, "
+	} else {
+		ret += fmt.Sprintf("State:%v, ", *o.State)
+	}
+
+	if o.TransferAmount == nil {
+		ret += "TransferAmount:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferAmount:%v, ", *o.TransferAmount)
+	}
+
+	if o.TransferRemark == nil {
+		ret += "TransferRemark:<nil>, "
+	} else {
+		ret += fmt.Sprintf("TransferRemark:%v, ", *o.TransferRemark)
+	}
+
+	if o.FailReason == nil {
+		ret += "FailReason:<nil>, "
+	} else {
+		ret += fmt.Sprintf("FailReason:%v, ", *o.FailReason)
+	}
+
+	if o.Openid == nil {
+		ret += "Openid:<nil>, "
+	} else {
+		ret += fmt.Sprintf("Openid:%v, ", *o.Openid)
+	}
+
+	if o.UserName == nil {
+		ret += "UserName:<nil>, "
+	} else {
+		ret += fmt.Sprintf("UserName:%v, ", *o.UserName)
+	}
+
+	if o.CreateTime == nil {
+		ret += "CreateTime:<nil>, "
+	} else {
+		ret += fmt.Sprintf("CreateTime:%v, ", *o.CreateTime)
+	}
+
+	if o.UpdateTime == nil {
+		ret += "UpdateTime:<nil>, "
+	} else {
+		ret += fmt.Sprintf("UpdateTime:%v, ", *o.UpdateTime)
+	}
+
+	return fmt.Sprintf("GetlTransferBillByOutNoResponse{%s}", ret)
+}
+
+func (o GetlTransferBillByNoResponse) Clone() *GetlTransferBillByNoResponse {
+	ret := GetlTransferBillByNoResponse{}
+
+	if o.MchId != nil {
+		ret.MchId = new(string)
+		*ret.MchId = *o.MchId
+	}
+
+	if o.OutBillNo != nil {
+		ret.OutBillNo = new(string)
+		*ret.OutBillNo = *o.OutBillNo
+	}
+
+	if o.TransferBillNo != nil {
+		ret.TransferBillNo = new(string)
+		*ret.TransferBillNo = *o.TransferBillNo
+	}
+
+	if o.Appid != nil {
+		ret.Appid = new(string)
+		*ret.Appid = *o.Appid
+	}
+
+	if o.State != nil {
+		ret.State = new(string)
+		*ret.State = *o.State
+	}
+
+	if o.TransferAmount != nil {
+		ret.TransferAmount = new(int64)
+		*ret.TransferAmount = *o.TransferAmount
+	}
+
+	if o.TransferRemark != nil {
+		ret.TransferRemark = new(string)
+		*ret.TransferRemark = *o.TransferRemark
+	}
+
+	if o.FailReason != nil {
+		ret.FailReason = new(string)
+		*ret.FailReason = *o.FailReason
+	}
+
+	if o.Openid != nil {
+		ret.Openid = new(string)
+		*ret.Openid = *o.Openid
+	}
+
+	if o.UserName != nil {
+		ret.UserName = new(string)
+		*ret.UserName = *o.UserName
+	}
+
+	if o.CreateTime != nil {
+		ret.CreateTime = new(string)
+		*ret.CreateTime = *o.CreateTime
+	}
+
+	if o.UpdateTime != nil {
+		ret.UpdateTime = new(string)
+		*ret.UpdateTime = *o.UpdateTime
 	}
 
 	return &ret

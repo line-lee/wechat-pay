@@ -15,6 +15,7 @@ import (
 	"fmt"
 	nethttp "net/http"
 	neturl "net/url"
+	"strings"
 
 	"github.com/wechat-pay/core"
 	"github.com/wechat-pay/core/consts"
@@ -23,10 +24,14 @@ import (
 
 type TransferBillApiService services.Service
 
-// InitiateBaillTransfer 发起转账
-//
+// CreateTransferBaill 发起转账
+// 更新时间：2025.03.18
 // 商家转账用户确认模式下，用户申请收款时，商户可通过此接口申请创建转账单
-func (a *TransferBillApiService) InitiateBaillTransfer(ctx context.Context, req InitiateBillTransferRequest) (resp *InitiateBillTransferResponse, result *core.APIResult, err error) {
+// 接口返回的HTTP状态码及错误码，仅代表本次请求的结果，不能代表订单状态。
+// 接口返回的HTTP状态码为200，且订单状态为ACCEPTED时，可认为发起商家转账成功。
+// 接口返回的HTTP状态码不为200时，请商户务必不要立即更换商户订单号重试。可根据错误码列表中的描述和接口返回的信息进行处理，并在查询原订单结果为失败或者联系客服确认情况后，再更换商户订单号进行重试。否则会有重复转账的资金风险。
+// 注：单个商户的接口频率限制为100次/s
+func (a *TransferBillApiService) CreateTransferBaill(ctx context.Context, req CreateTransferBillRequest) (resp *CreateTransferBillResponse, result *core.APIResult, err error) {
 	var (
 		localVarHTTPMethod   = nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -63,8 +68,155 @@ func (a *TransferBillApiService) InitiateBaillTransfer(ctx context.Context, req 
 		return nil, result, err
 	}
 
-	// Extract InitiateBillTransferResponse from Http Response
-	resp = new(InitiateBillTransferResponse)
+	// Extract CreateTransferBillResponse from Http Response
+	resp = new(CreateTransferBillResponse)
+	err = core.UnMarshalResponse(result.Response, resp)
+	if err != nil {
+		return nil, result, err
+	}
+	return resp, result, nil
+}
+
+// CancelTransferBill 撤销转账
+// 更新时间：2025.03.18
+// 商户通过转账接口发起付款后，在用户确认收款之前可以通过该接口撤销付款。该接口返回成功仅表示撤销请求已受理，系统会异步处理退款等操作，以最终查询单据返回状态为准。
+func (a *TransferBillApiService) CancelTransferBill(ctx context.Context, req CancelTransferBillRequest) (resp *CancelTransferBillResponse, result *core.APIResult, err error) {
+	var (
+		localVarHTTPMethod   = nethttp.MethodPost
+		localVarPostBody     interface{}
+		localVarQueryParams  neturl.Values
+		localVarHeaderParams = nethttp.Header{}
+	)
+
+	// 对请求中敏感字段进行加密
+	encReq := req.Clone()
+	encryptCertificate, err := a.Client.EncryptRequest(ctx, encReq)
+	if err != nil {
+		return nil, nil, fmt.Errorf("encrypt request failed: %v", err)
+	}
+
+	if encryptCertificate != "" {
+		localVarHeaderParams.Set(consts.WechatPaySerial, encryptCertificate)
+	}
+	req = *encReq
+
+	localVarPath := consts.WechatPayAPIServer + "/v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel"
+	// Make sure All Required Params are properly set
+
+	// Build Path with Path Params
+	localVarPath = strings.Replace(localVarPath, "{"+"out_bill_no"+"}", neturl.PathEscape(core.ParameterToString(*req.OutBillNo, "")), -1)
+
+	// Determine the Content-Type Header
+	localVarHTTPContentTypes := []string{"application/json"}
+	// Setup Content-Type
+	localVarHTTPContentType := core.SelectHeaderContentType(localVarHTTPContentTypes)
+
+	// Perform Http Request
+	result, err = a.Client.Request(ctx, localVarHTTPMethod, localVarPath, localVarHeaderParams, localVarQueryParams, localVarPostBody, localVarHTTPContentType)
+	if err != nil {
+		return nil, result, err
+	}
+
+	// Extract CreateTransferBillResponse from Http Response
+	resp = new(CancelTransferBillResponse)
+	err = core.UnMarshalResponse(result.Response, resp)
+	if err != nil {
+		return nil, result, err
+	}
+	return resp, result, nil
+}
+
+// GetlTransferBillByOutNo 商户单号查询转账单
+// 更新时间：2025.03.18
+// 商家转账用户确认模式下，根据商户单号查询转账单的详细信息。
+func (a *TransferBillApiService) GetlTransferBillByOutNo(ctx context.Context, req GetlTransferBillByOutNoRequest) (resp *GetlTransferBillByOutNoResponse, result *core.APIResult, err error) {
+	var (
+		localVarHTTPMethod   = nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarQueryParams  neturl.Values
+		localVarHeaderParams = nethttp.Header{}
+	)
+
+	// 对请求中敏感字段进行加密
+	encReq := req.Clone()
+	encryptCertificate, err := a.Client.EncryptRequest(ctx, encReq)
+	if err != nil {
+		return nil, nil, fmt.Errorf("encrypt request failed: %v", err)
+	}
+
+	if encryptCertificate != "" {
+		localVarHeaderParams.Set(consts.WechatPaySerial, encryptCertificate)
+	}
+	req = *encReq
+
+	localVarPath := consts.WechatPayAPIServer + "v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}"
+	// Make sure All Required Params are properly set
+
+	// Build Path with Path Params
+	localVarPath = strings.Replace(localVarPath, "{"+"out_bill_no"+"}", neturl.PathEscape(core.ParameterToString(*req.OutBillNo, "")), -1)
+
+	// Determine the Content-Type Header
+	localVarHTTPContentTypes := []string{"application/json"}
+	// Setup Content-Type
+	localVarHTTPContentType := core.SelectHeaderContentType(localVarHTTPContentTypes)
+
+	// Perform Http Request
+	result, err = a.Client.Request(ctx, localVarHTTPMethod, localVarPath, localVarHeaderParams, localVarQueryParams, localVarPostBody, localVarHTTPContentType)
+	if err != nil {
+		return nil, result, err
+	}
+
+	// Extract CreateTransferBillResponse from Http Response
+	resp = new(GetlTransferBillByOutNoResponse)
+	err = core.UnMarshalResponse(result.Response, resp)
+	if err != nil {
+		return nil, result, err
+	}
+	return resp, result, nil
+}
+
+// GetlTransferBillByNo 微信单号查询转账单
+// 更新时间：2025.03.18
+// 商家转账用户确认模式下，根据微信转账单号查询转账单的详细信息
+func (a *TransferBillApiService) GetlTransferBillByNo(ctx context.Context, req GetlTransferBillByNoRequest) (resp *GetlTransferBillByNoResponse, result *core.APIResult, err error) {
+	var (
+		localVarHTTPMethod   = nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarQueryParams  neturl.Values
+		localVarHeaderParams = nethttp.Header{}
+	)
+
+	// 对请求中敏感字段进行加密
+	encReq := req.Clone()
+	encryptCertificate, err := a.Client.EncryptRequest(ctx, encReq)
+	if err != nil {
+		return nil, nil, fmt.Errorf("encrypt request failed: %v", err)
+	}
+
+	if encryptCertificate != "" {
+		localVarHeaderParams.Set(consts.WechatPaySerial, encryptCertificate)
+	}
+	req = *encReq
+
+	localVarPath := consts.WechatPayAPIServer + "/v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}"
+	// Make sure All Required Params are properly set
+
+	// Build Path with Path Params
+	localVarPath = strings.Replace(localVarPath, "{"+"transfer_bill_no"+"}", neturl.PathEscape(core.ParameterToString(*req.TransferBillNo, "")), -1)
+
+	// Determine the Content-Type Header
+	localVarHTTPContentTypes := []string{"application/json"}
+	// Setup Content-Type
+	localVarHTTPContentType := core.SelectHeaderContentType(localVarHTTPContentTypes)
+
+	// Perform Http Request
+	result, err = a.Client.Request(ctx, localVarHTTPMethod, localVarPath, localVarHeaderParams, localVarQueryParams, localVarPostBody, localVarHTTPContentType)
+	if err != nil {
+		return nil, result, err
+	}
+
+	// Extract CreateTransferBillResponse from Http Response
+	resp = new(GetlTransferBillByNoResponse)
 	err = core.UnMarshalResponse(result.Response, resp)
 	if err != nil {
 		return nil, result, err
