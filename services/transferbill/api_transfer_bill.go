@@ -24,14 +24,14 @@ import (
 
 type TransferBillApiService services.Service
 
-// CreateTransferBaill 发起转账
+// CreateTransferBill 发起转账
 // 更新时间：2025.03.18
 // 商家转账用户确认模式下，用户申请收款时，商户可通过此接口申请创建转账单
 // 接口返回的HTTP状态码及错误码，仅代表本次请求的结果，不能代表订单状态。
 // 接口返回的HTTP状态码为200，且订单状态为ACCEPTED时，可认为发起商家转账成功。
 // 接口返回的HTTP状态码不为200时，请商户务必不要立即更换商户订单号重试。可根据错误码列表中的描述和接口返回的信息进行处理，并在查询原订单结果为失败或者联系客服确认情况后，再更换商户订单号进行重试。否则会有重复转账的资金风险。
 // 注：单个商户的接口频率限制为100次/s
-func (a *TransferBillApiService) CreateTransferBaill(ctx context.Context, req CreateTransferBillRequest) (resp *CreateTransferBillResponse, result *core.APIResult, err error) {
+func (a *TransferBillApiService) CreateTransferBill(ctx context.Context, req CreateTransferBillRequest) (resp *CreateTransferBillResponse, result *core.APIResult, err error) {
 	var (
 		localVarHTTPMethod   = nethttp.MethodPost
 		localVarPostBody     interface{}
